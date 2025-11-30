@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hotel Booking</title>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+}
+
+header {
+	height: 80px;
+	background: linear-gradient(135deg, #6a11cb, #2575fc);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 28px;
+	font-weight: bold;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+#div1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 120px;
+	padding-bottom: 40px;
+}
+
+form {
+	background: #fff;
+	padding: 35px 40px;
+	border-radius: 14px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+	width: 360px;
+	transition: 0.3s ease-in-out;
+}
+
+form:hover {
+	transform: scale(1.01);
+}
+
+form h2 {
+	text-align: center;
+	margin-bottom: 25px;
+	color: #333;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+label {
+	display: block;
+	margin-top: 14px;
+	font-weight: bold;
+	color: #444;
+	font-size: 14px;
+}
+
+input {
+	width: 100%;
+	padding: 10px 12px;
+	margin-top: 5px;
+	border: 1px solid #bbb;
+	border-radius: 6px;
+	font-size: 14px;
+	outline: none;
+	transition: 0.2s;
+}
+
+input:focus {
+	border-color: #6a11cb;
+	box-shadow: 0 0 5px rgba(106, 17, 203, 0.4);
+}
+
+#radiodiv {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin-top: 15px;
+}
+
+#radiodiv label {
+	margin: 0;
+	font-weight: 500;
+}
+
+#radiodiv input {
+	width: auto;
+	margin: 0;
+}
+
+.butto {
+	width: 100%;
+	padding: 12px;
+	margin-top: 22px;
+	border: none;
+	border-radius: 25px;
+	background: linear-gradient(135deg, #6a11cb, #2575fc);
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.butto:hover {
+	background: linear-gradient(135deg, #2575fc, #6a11cb);
+	transform: scale(1.05);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#anchor {
+	text-decoration: none;
+	color: white;
+}
+
+#div2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -20px;
+	margin-bottom: 40px;
+}
+
+#f2 {
+	margin-top: 50px;
+}
+
+footer {
+	height: 80px;
+	background: linear-gradient(135deg, #f6d365, #fda085);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	color: #333;
+	box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+	margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+	<header> OnlineBooking.com </header>
+
+	<main>
+		<div id='div1'>
+			<form action="book" method='post' id='f1'>
+				<h2>Book Your Stay</h2>
+
+				<label>Name :</label>
+				<input type="text" name="bname" required>
+
+				<label>Email :</label>
+				<input type="email" name="bemail" required>
+
+				<label>Check-in Date :</label>
+				<input type="date" name="bcheckindate" required>
+
+				<label>Check-out Date :</label>
+				<input type="date" name="bcheckoutdate" required>
+
+				<div id='radiodiv'>
+					<label for='genderM'>Male</label>
+					<input type='radio' name='gender' value='Male' id='genderM'>
+
+					<label for='genderF'>Female</label>
+					<input type='radio' name='gender' value='female' id='genderF'>
+				</div>
+
+				<button class='butto' type="submit">Book Now</button>
+			</form>
+		</div>
+
+		<div id='div2'>
+			<form method='post' id='f2'>
+			<button class='butto'>
+				<a id='anchor' href='./home.html'>
+				Back</a>
+					</button>
+			</form>
+		</div>
+	</main>
+
+	<footer> © 2025 OnlineBooking.com | All Rights Reserved </footer>
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OnlineBooking.com - Find Your Perfect Stay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary-color: #005f73;
+        --secondary-color: #0a9396;
+        --accent-color: #ee9b00;
+        --background-color: #f8f9fa;
+        --text-color: #212529;
+        --light-text-color: #ffffff;
+        --card-bg: #ffffff;
+        --shadow-color: rgba(0, 95, 115, 0.1);
+        --border-radius-md: 12px;
+        --border-radius-lg: 16px;
+    }
+
+    /* --- Global Styles & Animations --- */
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Header Styling --- */
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        height: 80px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.8); /* Glassmorphism effect */
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 0 40px;
+        z-index: 1000;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    #logo h1 {
+        color: var(--primary-color);
+        font-weight: 700;
+    }
+    #logo h1 span {
+        color: var(--accent-color);
+    }
+    
+    #midhead b {
+        font-size: 1.1em;
+        color: var(--secondary-color);
+        font-weight: 600;
+    }
+
+    #profile-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .header-btn {
+        background: transparent;
+        color: var(--primary-color);
+        padding: 10px 20px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 50px;
+        border: 2px solid var(--secondary-color);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .header-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+    .header-btn:hover {
+        background-color: var(--secondary-color);
+        color: var(--light-text-color);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(10, 147, 150, 0.2);
+    }
+    
+    /* --- Hero Section --- */
+    .hero-section {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        height: 100%; width: 100%;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://www.dorchestercollection.com/media/xx5fzzjz/cpa-exterior-autumn-view-high-res.jpg?width=1600&height=540&rmode=crop');
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+    
+    .hero-content {
+        color: white;
+        animation: fadeIn 1s ease-out;
+    }
+    .hero-content h1 {
+        font-size: 3.8rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    /* --- Action Container --- */
+    .action-container {
+        max-width: 1100px;
+        margin: -60px auto 0 auto;
+        position: relative;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 25px 40px;
+        background: var(--card-bg);
+        border-radius: var(--border-radius-lg);
+        box-shadow: 0 10px 40px var(--shadow-color);
+        animation: fadeIn 0.8s ease-out 0.2s;
+        animation-fill-mode: backwards;
+    }
+    
+     .action-btn {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: var(--light-text-color);
+        font-weight: 600;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 95, 115, 0.25);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+     }
+     .action-btn svg {
+        width: 20px; height: 20px;
+     }
+     .action-btn:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 6px 20px rgba(0, 95, 115, 0.35);
+     }
+
+    /* --- Main Content & Hotel Cards --- */
+    main {
+        padding: 80px 20px 40px 20px;
+    }
+    .hotel-listing-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .hotel-card {
+        display: flex;
+        width: 100%;
+        border-radius: var(--border-radius-lg);
+        background: var(--card-bg);
+        box-shadow: 0 5px 25px var(--shadow-color);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        animation: fadeIn 0.8s ease-out;
+    }
+    .hotel-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(0, 95, 115, 0.15);
+    }
+    .hotel-card img {
+        width: 280px;
+        height: 100%;
+        min-height: 200px;
+        object-fit: cover;
+    }
+    .hotel-content {
+        padding: 30px;
+        flex: 1;
+    }
+    .hotel-content h2 {
+        margin: 0 0 10px;
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+    .hotel-content p {
+        color: #555;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+    .hotel-content button {
+        padding: 12px 28px;
+        border: none;
+        border-radius: 50px;
+        background: var(--accent-color);
+        color: var(--light-text-color);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(238, 155, 0, 0.3);
+    }
+    .hotel-content button:hover {
+        background: #d48800;
+        transform: scale(1.05);
+        box-shadow: 0 6px 18px rgba(238, 155, 0, 0.4);
+    }
+    
+    /* --- Footer --- */
+    footer {
+        padding: 30px 0;
+        width: 100%;
+        background: #e9ecef;
+        border-top: 1px solid #dee2e6;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 500;
+        color: #6c757d;
+        margin-top: 40px;
+    }
+
+    /* --- Responsive Design --- */
+    @media (max-width: 992px) {
+        .hero-content h1 { font-size: 3rem; }
+        .action-container { flex-direction: column; gap: 15px; }
+    }
+    @media (max-width: 768px) {
+        header { padding: 0 20px; }
+        #midhead { display: none; }
+        .hotel-card { flex-direction: column; }
+        .hotel-card img { width: 100%; height: 220px; }
+    }
+
+</style>
+</head>
+
+<body>
+    <header>
+        <div id='logo'>
+            <h1>Online<span>Booking</span>.com</h1>
+        </div>
+        
+        <div id="midhead">
+            <b>Welcome to Your Next Adventure</b>
+        </div>
+        
+        <div id='profile-actions'>
+            <form action="profile" method="post">
+                <button class='header-btn'>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/></svg>
+                    <span>PROFILE</span>
+                </button>
+            </form>
+            <form action="login" method="post">
+                <button class='header-btn'><b>LOG OUT</b></button>
+            </form>
+        </div>
+    </header>
+
+    <div class='hero-section'>
+        <div class="hero-content">
+            <h1>Find Your Perfect Stay</h1>
+            <p>Book hotels with confidence and create unforgettable memories.</p>
+        </div>
+    </div>
+    
+    <div class='action-container'>
+        <form action="booking" method='post'>
+            <button class='action-btn'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm1 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m7-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/></svg>
+                <span>Book Hotel</span>
+            </button>
+        </form>
+        <form action="checkin.html" method='post'>
+            <button class='action-btn'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/><path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/></svg>
+                <span>Check In</span>
+            </button>
+        </form>
+        <form action="track" method='post'>
+            <button class='action-btn'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M8.5 5.5a.5.5 0 0 0-1 0v3.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-2.5z"/><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10 0H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/></svg>
+                <span>Check Booking</span>
+            </button>
+        </form>
+      <!--   <form action="checkout.html" method='post'>
+            <button class='action-btn'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/><path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/></svg>
+                <span>Check Out</span>
+            </button>
+        </form> -->
+    </div>
+
+    <main>
+        <div class="hotel-listing-container">
+            <div class="hotel-card">
+                <img src="https://picsum.photos/400/300?random=1" alt="Grand Palace Hotel">
+                <div class="hotel-content">
+                    <h2>Grand Palace Hotel</h2>
+                    <p>Experience luxury at its finest with modern rooms, rooftop dining, and a beautiful city view.</p>
+                   <form action="booking" method='post'>
+                     <button>Book Now</button>
+                   </form>    
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://picsum.photos/400/300?random=2" alt="Seaside Resort">
+                <div class="hotel-content">
+                    <h2>Seaside Resort</h2>
+                    <p>Relax by the ocean with our premium suites and enjoy private beach access and water sports.</p>
+                    <form action="booking" method='post'>
+                         <button>Book Now</button>
+                   </form>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://picsum.photos/400/300?random=3" alt="Mountain View Inn">
+                <div class="hotel-content">
+                    <h2>Mountain View Inn</h2>
+                    <p>Stay close to nature with cozy rooms, guided hiking trails, and breathtaking mountain views.</p>
+                    <form action="booking" method='post'>
+                         <button>Book Now</button>
+                   </form>    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer> © 2025 OnlineBooking.com | All Rights Reserved </footer>
+</body>
+</html>

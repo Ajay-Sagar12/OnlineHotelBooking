@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tracking Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .form-container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        text-align: center;
+        width: 300px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    input[type="number"] {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+    input[type="text"] {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    input[type="number"]:focus {
+        border-color: #74ebd5;
+        }
+    input[type="text"]:focus {
+        border-color: #74ebd5;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        background: #74ebd5;
+        font-size: 16px;
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.3s;
+		margin-top:10px;
+    }
+
+    button:hover {
+        background: #4abbb4;
+    }
+</style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Tracking Form</h2>
+        <form action="trackbooking" method="post">
+            <input type="text" name="trackingname" placeholder="Enter name of the geust " required>
+            <input type="number" name="trackingId" placeholder="Enter room Number" min='300' max='350' required>
+            <button type="submit">Track</button>
+        </form>
+        <form action="home.html" >
+        	<button>back</button>
+        </form>
+    </div>
+</body>
+</html>

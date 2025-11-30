@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Booking Success</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+            transform: scale(0.9);
+            animation-fill-mode: forwards;
+        }
+
+        h1 {
+            color: #28a745;
+            margin-bottom: 20px;
+            font-size: 28px;
+            animation: slideDown 1.2s ease-out;
+        }
+
+        .success-icon {
+            font-size: 70px;
+            color: #28a745;
+            margin-bottom: 20px;
+            animation: pop 1s ease-in-out;
+        }
+
+        form button {
+            background: linear-gradient(45deg, #007BFF, #00C6FF);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        form button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0,123,255,0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">✔️</div>
+        <h1>Your hotel is booked successfully!</h1>
+        <form action="backhome" method="post">
+            <button>Home</button>
+        </form>
+    </div>
+</body>
+</html>

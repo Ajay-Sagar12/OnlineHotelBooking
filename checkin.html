@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Check-In - OnlineBooking.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #005f73;
+            --secondary-color: #0a9396;
+            --accent-color: #ee9b00;
+            --background-gradient: linear-gradient(135deg, #f0f4f8, #e9ecef);
+            --card-bg: #ffffff;
+            --text-color: #212529;
+            --label-color: #495057;
+            --border-color: #ced4da;
+            --shadow-color: rgba(0, 95, 115, 0.1);
+            --error-color: #d90429;
+            --error-bg: #ffccd5;
+            --border-radius-lg: 16px;
+        }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--background-gradient);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .checkin-container {
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 10px 40px var(--shadow-color);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            border-top: 5px solid var(--secondary-color);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .checkin-container h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .checkin-container p {
+            color: var(--label-color);
+            margin-bottom: 35px;
+        }
+        .input-group {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            font-weight: 500;
+            color: var(--label-color);
+            margin-bottom: 10px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top:10px;
+        }
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="checkin-container">
+        <h2>Hotel Check-In</h2>
+        <p>Please enter your room number to proceed.</p>
+        <form action="checkinn" method="post">
+            <div class="input-group">
+                <label for="roomnumber">Room Number</label>
+                <input type="number" id="roomnumber" name="roomnumber" placeholder="e.g., 305" required>
+            </div>
+            <button type="submit" class="submit-btn">Proceed to Check-In</button>
+        </form>
+            <a href='home.html'> <button type="submit" class="submit-btn">back</button></a>
+    </div>
+</body>
+</html>
